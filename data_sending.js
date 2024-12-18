@@ -12,10 +12,9 @@ function saveToLocalStorage(index, timestamp, description) {
     console.log(`Saved to LocalStorage:`, event);
 }
 
-function sendToServer(index, timestamp, description) {
+function sendToServer(index, description) {
     const event = {
         index: index,
-        timestamp: timestamp,
         description: description
     };
 

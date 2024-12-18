@@ -51,7 +51,7 @@ playButton.addEventListener('click', () => {
 closeButton.addEventListener('click', () => {
     ID ++;
     saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Close button clicked");
-    sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Close button clicked");
+    sendToServer(ID, "Close button clicked");
     clearInterval(animationInterval);
     work.style.display = 'none';
     reloadButton.style.display = 'none';
@@ -73,7 +73,7 @@ closeButton.addEventListener('click', () => {
 startButton.addEventListener('click', () => {
     ID ++;
     saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Start button clicked");
-    sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Start button clicked");
+    sendToServer(ID, "Start button clicked");
     startButton.style.display = 'none';
     stopButton.style.display = 'inline-block';
     animationInterval = setInterval(() => {
@@ -85,12 +85,12 @@ startButton.addEventListener('click', () => {
         if (circlePosition.x <= 0) {
             direction.x *= -1;
             saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle touched left border");
-            sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle touched left border");
+            sendToServer(ID, "Circle touched left border");
         }
 
         if (circlePosition.y + circle.clientHeight >= anim.clientHeight || circlePosition.y <= 0) {
             saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle touched top/bottom border");
-            sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle touched top/bottom border");
+            sendToServer(ID, "Circle touched top/bottom border");
             direction.y *= -1;
         }
 
@@ -101,7 +101,7 @@ startButton.addEventListener('click', () => {
 
         if (parseFloat(circle.style.opacity) <= 0.1) {
             saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle went outside the anim-box");
-            sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle went outside the anim-box");
+            sendToServer(ID, "Circle went outside the anim-box");
             clearInterval(animationInterval);
             stopButton.style.display = 'none';
             reloadButton.style.display = 'inline-block';
@@ -109,7 +109,7 @@ startButton.addEventListener('click', () => {
             circle.style.opacity = 1;
         }else{
             saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle moved");
-            sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Circle moved");
+            sendToServer(ID, "Circle moved");
         }
 
         circle.style.left = `${circlePosition.x}px`;
@@ -121,7 +121,7 @@ startButton.addEventListener('click', () => {
 stopButton.addEventListener('click', () => {
     ID ++;
     saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Stop button clicked");
-    sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Stop button clicked");
+    sendToServer(ID, "Stop button clicked");
     stopButton.style.display = 'none';
     startButton.style.display = 'inline-block';
     clearInterval(animationInterval);
@@ -130,7 +130,7 @@ stopButton.addEventListener('click', () => {
 reloadButton.addEventListener('click', () => {
     ID ++;
     saveToLocalStorage(ID, getCurrentTimestamp('Europe/Kyiv'), "Reload button clicked");
-    sendToServer(ID, getCurrentTimestamp('Europe/Kyiv'), "Reload button clicked");
+    sendToServer(ID, "Reload button clicked");
     reloadButton.style.display = 'none';
     startButton.style.display = 'inline-block';
     circle.style.display = 'block';
