@@ -74,7 +74,7 @@ div{
     width: 100%;
     height: 80%;
     border: 5px solid pink;
-    background: url('texture.png') repeat;
+    background: url('texture.jpg') repeat;
 }
 
 #circle {
@@ -87,6 +87,14 @@ div{
     border-radius: 50%;
     border: 2px solid black;
     opacity: 1;
+}
+
+#results{
+	margin-top: 1vw;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 1vw;
 }
 
 
