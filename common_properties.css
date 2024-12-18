@@ -1,0 +1,56 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'CustomFont'; /* Name your font family */
+  src: url('Comic Sans MS.ttf'); /* Locate the .ttf file within your directory*/
+}
+
+body{
+	font-family: 'CustomFont';
+}
+
+div{
+	align-items: center; 
+  	justify-content: center;
+  	text-align: justify;
+}
+
+h1{
+	font-size: calc(1vw + 0.5vh);
+}
+
+
+
+a{
+    text-decoration: none; 
+    color: inherit; 
+    transition: 1s;
+}
+a:visited{
+    color: inherit; 
+}
+a:active{
+	color: inherit; 
+}
+a:hover{
+	color:skyblue;
+	transition: 1s;
+}
+
+
+
+.block-text{
+	width: 17vw;
+	font-size: calc(0.8vw + 0.5vh);
+}
+
+.photo{
+	width:70%;
+	height:auto;
+	border-radius: 16px;
+	border: 2px solid black;
+}
